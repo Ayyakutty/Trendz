@@ -1,0 +1,320 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trends</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+
+    <!-- Css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Font Awesome icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Protest+Revolution&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1 class="topic">Trendz</h1>
+
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="{% url 'home' %}">Home</a></p>
+            <p class="navbar-link"><a href="{% url 'collections' %}">Collections</a></p>
+            <p class="navbar-link"><a href="{% url 'contact' %}">Contact</a></p>
+        </div>
+
+
+        <div class="navbar-menu-toggle" onclick="showNavbar()">
+            <i class="fa-solid fa-bars" onclick="on()"></i>
+        </div>
+
+    </nav>
+
+    <!-- Side Navbar -->
+    <div class="side-navbar">
+        <p style="text-align: right;" onclick="closeNavbar()">
+            <i class="fa-solid fa-xmark" onclick="off()"></i>
+        </p>
+
+        <div class="side-navbar-links">
+        <p class="side-navbar-link"><a href="{% url 'home' %}">Home</a></p>
+        <p class="side-navbar-link"><a href="{% url 'collections' %}">Collections</a></p>
+        <p class="side-navbar-link"><a href="{% url 'contact' %}">Contact</a></p>
+    </div>
+
+    </div>
+
+    <!-- Overlay -->
+    <div class="popup">
+    </div>
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div>
+            <h1>Level up your styles</h1>
+            <p>with our stunning collections</p>
+            <button class="header-btn">
+                <a href="{% url 'collections' %}" style="color: inherit; text-decoration: none;">Shop Now</a>
+             </button>
+
+        </div>
+
+        <div>
+            <img class="header-img"
+                src="https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="fashion" style="width: 300px;height: 400px;">
+        </div>
+    </div>
+
+    <!-- Service -->
+
+    <div class="service">
+        <div class="service-container-1">
+            <div>
+                <h2>We provide Best</h2>
+                <h2>Customer Experience</h2>
+            </div>
+
+            <div>
+                <p>||-we ensure that our customer have the best shopping experience-||</p>
+            </div>
+
+        </div>
+
+        <div class="service-container-2">
+            <div class="service-container-2-1" onclick="pop1()">
+                <i class="fa-regular fa-face-smile"></i>
+                <h4>Satisfaction Guarantee</h4>
+                <p>In our website customers get satisfaction about experience</p>
+            </div>
+
+            <div class="service-container-2-2" onclick="pop2()">
+                <i class="fa-regular fa-face-smile"></i>
+                <h4>New Arrival</h4>
+                <p>New arrival of collections with unique quality and different models</p>
+            </div>
+
+            <div class="service-container-2-3" onclick="pop3()">
+                <i class="fa-regular fa-face-smile"></i>
+                <h4>Fast & Free Shipping</h4>
+                <p>Free shipping and fastest delivery option in our website</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- service popup -->
+
+    <div class="popup1">
+        <div class="popup1-content">
+
+            <div>
+                <p style="text-align: right;" onclick="close1()">
+                    <i class="fa-solid fa-xmark" id="pop1-close"></i>
+                </p>
+            </div>
+
+            <i class="fa-regular fa-face-smile"></i>
+            <h4>Satisfaction Guarantee</h4>
+            <p>In our website customers get satisfaction about experience</p>
+
+        </div>
+
+    </div>
+
+    <div class="popup2">
+        <div class="popup2-content">
+
+            <div>
+                <p style="text-align: right;" onclick="close2()">
+                    <i class="fa-solid fa-xmark" id="pop1-close"></i>
+                </p>
+            </div>
+
+            <i class="fa-regular fa-face-smile"></i>
+            <h4>New Arrival</h4>
+            <p>New arrival of collections with unique quality and different models</p>
+
+        </div>
+
+    </div>
+
+    <div class="popup3">
+        <div class="popup3-content">
+
+            <div>
+                <p style="text-align: right;" onclick="close3()">
+                    <i class="fa-solid fa-xmark" id="pop1-close"></i>
+                </p>
+            </div>
+
+            <i class="fa-regular fa-face-smile"></i>
+            <h4>Fast & Free Shipping</h4>
+            <p>Free shipping and fastest delivery option in our website</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- New Arrival -->
+
+    <h2 style="padding: 20px;">New Arrival</h2>
+
+
+    <div class="new-arrival">
+        <div class="new-arrival-container">
+            <img src="https://images.unsplash.com/photo-1617152623457-4c9b639926d7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  style="width: 200px;height: 250px" alt=" ">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="new-arrival-container">
+            <img src="https://images.unsplash.com/photo-1699415890740-17416f7fdad9?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 200px; height: 250px;" alt=" ">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="new-arrival-container">
+            <img src="https://images.unsplash.com/photo-1451680350250-2ae7d6e00f5a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fGZhc2hpb24lMjBhY2Nlc3NvcmllcyUyMGZvciUyMG1lbnxlbnwwfHwwfHx8MA%3D%3D" style="width: 200px; height: 250px;" alt=" ">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="new-arrival-container">
+            <img src="https://plus.unsplash.com/premium_photo-1663036407543-02b193affa6c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 200px; height: 250px;" alt=" ">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Most Wanted-->
+
+    <h2 style="padding: 20px;">Most Wanted</h2>
+
+
+    <div class="new-arrival">
+        <div class="new-arrival-container">
+            <img src="https://images.unsplash.com/photo-1663242930626-f1b609b595b0?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 200px; height: 250px;" alt=" ">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="new-arrival-container">
+            <img src="https://images.unsplash.com/photo-1672622012959-45355279c93e?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 200px; height: 250px;" alt=" ">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="new-arrival-container">
+            <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=1861&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 200px; height: 250px;" alt=" ">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="new-arrival-container">
+            <img src="https://images.unsplash.com/photo-1694656937152-b2377c0b5de7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 200px; height: 250px;" alt=" ">
+            <button>Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!-- News -->
+    <div class="news">
+        <h2>Join our News Letter</h2>
+        <p>Sign up for our email newsletter to get exclusive discounts and updates and more</p>
+        <div>
+            <input type="text" class="search">
+        </div>
+
+        <div>
+            <button>Subscribe</button>
+        </div>
+    </div>
+
+    <!-- footer -->
+
+    <div class="footer">
+        <div class="footer-container">
+            <h2 class="footer-title">Trendz</h2>
+            <p class="footer-text">Trendz makes you fashionable</p>
+            <div class="footer-icons">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-twitter"></i>
+             </div>
+        </div>
+        <p class="footer-copyright">@ 2024 Trendz.com | All Rights Reserved</p>
+    </div>
+
+
+
+    <!-- Rest of your HTML content -->
+    <script src="{% static 'js/index.js' %}"></script>
+
+    <!-- side-navbar popup -->
+    <script>
+        function on() {
+            document.querySelector(".popup1").style.display = "block";
+        }
+        function off() {
+            document.querySelector(".popup1").style.display = "none";
+        }
+    </script>
+
+    <!-- service popups -->
+
+    <script>
+        var pops1 = document.querySelector(".popup1")
+        var pops1Con = document.querySelector(".popup1-content")
+
+        function pop1() {
+            pops1.style.display = "block";
+            pops1Con.style.display = "block";
+        }
+        function close1() {
+            pops1Con.style.display = "none";
+            pops1.style.display = "none";
+        }
+    </script>
+
+    <script>
+        var pops2 = document.querySelector(".popup2")
+        var pops2Con = document.querySelector(".popup2-content")
+
+        function pop2() {
+            pops2.style.display = "block";
+            pops2Con.style.display = "block";
+        }
+        function close2() {
+            pops2Con.style.display = "none";
+            pops2.style.display = "none";
+        }
+    </script>
+
+    <script>
+        var pops3 = document.querySelector(".popup3")
+        var pops3Con = document.querySelector(".popup3-content")
+
+        function pop3() {
+            pops3.style.display = "block";
+            pops3Con.style.display = "block";
+        }
+        function close3() {
+            pops3Con.style.display = "none";
+            pops3.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
